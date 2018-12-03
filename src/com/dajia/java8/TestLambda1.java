@@ -21,7 +21,7 @@ public class TestLambda1 {
     public void test1() {
         employeeList.stream()
                 .filter((e) -> {
-                    System.out.println("短路");
+                    System.out.println("短路.");
                     return e.getSalary() > 6000;
                 })
                 .limit(2)
