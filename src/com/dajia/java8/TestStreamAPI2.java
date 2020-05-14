@@ -24,13 +24,13 @@ import java.util.stream.Stream;
  */
 public class TestStreamAPI2 {
     List<Employee> employees = Arrays.asList(
-            new Employee("张三", 18, 9999.99),
-            new Employee("李四", 58, 5555.55),
-            new Employee("王五", 26, 3333.33),
-            new Employee("赵六", 36, 6666.66),
-            new Employee("田七", 12, 8888.88),
-            new Employee("田七", 12, 8888.88),
-            new Employee("田七", 12, 8888.88)
+            new Employee("1","张三", 18, 9999.99),
+            new Employee("2","李四", 58, 5555.55),
+            new Employee("3","王五", 26, 3333.33),
+            new Employee("4","赵六", 36, 6666.66),
+            new Employee("5","田七", 12, 8888.88),
+            new Employee("5","田七", 12, 8888.88),
+            new Employee("5","田七", 12, 8888.88)
     );
 
     @Test

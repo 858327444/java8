@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Employee implements Serializable {
     private static final long serialVersionUID = 4366709392189863010L;
+
+    private String id;
     private String name;
     private Integer age;
     private Double salary;
@@ -13,13 +15,15 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(String name, Integer age, Double salary) {
+    public Employee(String id,String name, Integer age, Double salary) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
     }
 
-    public Employee(String name, Integer age, Double salary, Status status) {
+    public Employee(String id,String name, Integer age, Double salary, Status status) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -50,6 +54,14 @@ public class Employee implements Serializable {
         this.age = age;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public Double getSalary() {
         return salary;
     }
@@ -65,6 +77,7 @@ public class Employee implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
 
         Employee employee = (Employee) o;
+        if (id != null ? !id.equals(employee.id) : employee.id != null) return false;
 
         if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
         if (age != null ? !age.equals(employee.age) : employee.age != null) return false;
@@ -84,6 +97,7 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return "Employee{" +
+                "id='" + id + '\'' +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +

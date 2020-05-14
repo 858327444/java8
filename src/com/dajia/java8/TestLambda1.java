@@ -10,11 +10,11 @@ import java.util.stream.LongStream;
 
 public class TestLambda1 {
     List<Employee> employeeList = Arrays.asList(
-            new Employee("张三", 20, 5555.55),
-            new Employee("李四", 37, 7777.77),
-            new Employee("王五", 39, 4444.44),
-            new Employee("赵六", 20, 8888.88),
-            new Employee("田七", 56, 9999.99)
+            new Employee("1","张三", 20, 5555.55),
+            new Employee("2","李四", 37, 7777.77),
+            new Employee("3","王五", 39, 4444.44),
+            new Employee("4","赵六", 20, 8888.88),
+            new Employee("5","田七", 56, 9999.99)
     );
 
     @Test

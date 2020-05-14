@@ -7,6 +7,9 @@ import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toCollection;
+
 
 /**
  * 终止操作
@@ -28,14 +31,24 @@ import java.util.stream.Collectors;
  */
 public class TestStreamAPI3 {
 
+
     List<Employee> employees = Arrays.asList(
-            new Employee("张三", 18, 9999.99, Status.FREE),
-            new Employee("李四", 58, 5555.55, Status.BUSY),
-            new Employee("王五", 26, 3333.33, Status.VOCATION),
-            new Employee("赵六", 36, 6666.66, Status.FREE),
-            new Employee("田七", 12, 8888.88, Status.FREE),
-            new Employee("田七", 12, 8888.88, Status.BUSY)
+            new Employee("1", "张三", 18, 9999.99, Status.FREE),
+            new Employee("2", "李四", 58, 5555.55, Status.BUSY),
+            new Employee("3", "王五", 26, 3333.33, Status.VOCATION),
+            new Employee("4", "赵六", 36, 6666.66, Status.FREE),
+            new Employee("5", "田七", 12, 8888.88, Status.FREE),
+            new Employee("5", "田七", 12, 8888.88, Status.FREE)
     );
+
+
+    @Test
+    public void test9() {
+        // 根据对象的某个属性进行去重
+        List<Employee> collect = employees.stream().collect(collectingAndThen(toCollection(() -> new TreeSet<>(Comparator.comparing(item -> item.getId()))), ArrayList::new));
+        collect.stream().forEach(System.out::println);
+    }
+
 
     @Test
     public void test8() {
@@ -142,7 +155,7 @@ public class TestStreamAPI3 {
         System.out.println("--------------------");
 
         HashSet<Employee> collect1 = employees.stream()
-                .collect(Collectors.toCollection(HashSet::new));
+                .collect(toCollection(HashSet::new));
         collect1.forEach(System.out::println);
 
 
