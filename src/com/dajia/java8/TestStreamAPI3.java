@@ -5,6 +5,7 @@ import com.dajia.entity.Employee.Status;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.collectingAndThen;
@@ -40,6 +41,13 @@ public class TestStreamAPI3 {
             new Employee("5", "田七", 12, 8888.88, Status.FREE),
             new Employee("5", "田七", 12, 8888.88, Status.FREE)
     );
+
+    @Test
+    public void test10() {
+        // 当key重复时,会报Duplicate key 的错,
+        Map<String, Employee> collect = employees.stream().collect(Collectors.toMap(Employee::getId, Function.identity()));
+        System.out.println(collect);
+    }
 
 
     @Test
