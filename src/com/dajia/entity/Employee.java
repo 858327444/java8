@@ -1,15 +1,23 @@
 package com.dajia.entity;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 public class Employee implements Serializable {
-    private static final long serialVersionUID = 4366709392189863010L;
+    // private static final long serialVersionUID = 4366709392189863010L;
 
     private String id;
     private String name;
     private Integer age;
     private Double salary;
     private Status status;
+    private List<String> list;
+    private Map<String,Object> map;
+    private String[] array;
+
+
+
 
 
     public Employee() {
@@ -28,6 +36,30 @@ public class Employee implements Serializable {
         this.age = age;
         this.salary = salary;
         this.status = status;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
+    }
+
+    public Map<String, Object> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, Object> map) {
+        this.map = map;
+    }
+
+    public String[] getArray() {
+        return array;
+    }
+
+    public void setArray(String[] array) {
+        this.array = array;
     }
 
     public Status getStatus() {

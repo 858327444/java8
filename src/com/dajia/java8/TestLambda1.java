@@ -26,7 +26,7 @@ public class TestLambda1 {
                 })
                 .limit(2)
                 .map(Employee::getName)
-                .forEach(employee -> System.out.println(employee));
+                .forEach(System.out::println);
 
     }
 
