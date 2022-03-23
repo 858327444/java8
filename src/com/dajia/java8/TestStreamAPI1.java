@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestStreamAPI1 {
@@ -32,4 +33,16 @@ public class TestStreamAPI1 {
                 .limit(10)
                 .forEach(System.out::println);
     }
+
+    @Test
+    public void test2() {
+        Stream<String> stream = Stream.of("hello", "felord.cn");
+        List<String> collect = stream.peek(System.out::println).collect(Collectors.toList());
+
+    }
+
+
+
+
+
 }

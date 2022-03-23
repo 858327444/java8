@@ -244,9 +244,30 @@ public class TestStreamAPI3 {
         if (min.isPresent()) {
             System.out.println(min.get());
         }
+    }
+
+    @Test
+    public void test1111() {
+        ArrayList<String> a = new ArrayList<>();
+        // a.add("1");
+        // a.add("2");
+        // a.add("3");
+        List<String> b = new ArrayList<>();
+        b.add("2");
+        b.add("3");
+        b.add("4");
+
+
+        boolean flag = b.containsAll(a);
+        System.out.println(flag);
+
+
+        b.removeAll(a);
+        System.out.println(b);
 
 
     }
+
 
     @Test
     public void test1() {
