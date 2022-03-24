@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.toCollection;
 
 
 /**
- * 终止操作
+ * 终止操作.
  * <p>
  * 查找与匹配
  * allMatch——检查是否匹配所有元素
